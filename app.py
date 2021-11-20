@@ -48,29 +48,38 @@ def repalceWordsWithSum(text_line):
 
   return temp_array
 
+def vectorizer(text_by_line):
+  count = max_line = s0
+  result_matrix = []
+
+  for line in text_by_line:
+    count += 1
+    # 1. transliterate each line
+    line = transliterate(line)
+    # 1.1. define max lengs
+    if line.count(' ') > max_line:
+      max_line = line.count(' ')
+
+    result_matrix.append(repalceWordsWithSum(line))
+
+    # fill matrix with zero
+    count = 0
+    for line in result_matrix:
+      result_matrix[count] = line + [0]*(max_line-len(line))
+      count += 1
+  
+  return result_matrix
+
+
 #-------------------Application-----------
 
 # Using readlines()
 file1 = open('ukrainian-text.txt', 'r')
 Lines = file1.readlines()
-count=max_line=line_length = 0
+
 result_matrix = []
 
 # Strips the newline character
-for line in Lines:
-	count += 1
-  # 1. transliterate each line
-	line = transliterate(line)
-	# 1.1. define max lengs
-	if line.count(' ') > max_line:
-		max_line = line.count(' ')
-    
-	result_matrix.append(repalceWordsWithSum(line))
-
-# fill matrix with zero
-count = 0
-for line in result_matrix:
-  result_matrix[count] = line + [0]*(max_line-len(line))
-  count += 1
+result_matrix = vectorizer(Lines)
 
 print (result_matrix)
