@@ -49,7 +49,7 @@ def repalceWordsWithSum(text_line):
   return temp_array
 
 def vectorizer(text_by_line):
-  count = max_line = s0
+  count = max_line = 0
   result_matrix = []
 
   for line in text_by_line:
@@ -71,6 +71,23 @@ def vectorizer(text_by_line):
   return result_matrix
 
 
+params = [
+    [31, 10.3, -2.8, 10.3],
+    [2.1, 8.8, -11.4, -5.6],
+    [1.6, 0.2, -10.8, 38.5]
+  ]
+
+def getMinMax(prms):
+    a, b, c, d = prms
+    result_list = []
+    for x in range(-4, 1):
+        curr_result = a * x ** 3 + b * x ** 2 + c * x + d
+        result_list.append(round(curr_result, 4))
+    
+    print("For values a:", a, ", b:", b, ", c:", c, ", d:", d, "Min: ", min(result_list), 
+      "Max: ", max(result_list))
+    
+
 #-------------------Application-----------
 
 # Using readlines()
@@ -82,4 +99,6 @@ result_matrix = []
 # Strips the newline character
 result_matrix = vectorizer(Lines)
 
-print (result_matrix)
+# Nast #2
+for i in params:
+    getMinMax(i)
