@@ -98,7 +98,10 @@ result_matrix = []
 
 # Strips the newline character
 result_matrix = vectorizer(Lines)
+print("TASK #1 result")
+print(result_matrix)
 
-# Nast #2
+# Task #2
+print("TASK #2 result")
 for i in params:
     getMinMax(i)
