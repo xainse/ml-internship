@@ -88,3 +88,6 @@ print("- center: ", t1.x, t1.y)
 print("- side: ", t1.side)
 print("- area: ", t1.get_area())
 print("- vertex: ", t1.get_vertex())
+
+
+print("The program designed for the forth lesson has been completed!")
