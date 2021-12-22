@@ -13,12 +13,21 @@ class Shape:
     def move(self, new_x, new_y):
         self.x = new_x
         self.y = new_y
+
+    #
+    def get_distance(figure_1, figure_2):
+        #AB = (figure_2.x - figure_1.x)**2 + (figure_2.y - figure_1.y)**2
+        return sqrt((figure_2.x - figure_1.x)**2 + (figure_2.y - figure_1.y)**2)
+
         
 
 class Circle(Shape):
     def __init__(self, x, y, radius=1):
         super().__init__(x, y)
         self.radius = radius
+    
+    def get_area(self):
+        return self.pi * self.radius * self.radius
 
 
 class Square(Shape):
@@ -76,6 +85,16 @@ c1 = Circle(10, 10, 5)
 s1 = Square(20, 16, 5)
 t1 = Triangle(30, 8, 6)
 
+print("Cirtle:")
+print("- center: ", c1.x, c1.y)
+print("- radius: ", c1.radius)
+print("- area: ", c1.get_area())
+c1.move(10, 100)
+print("- Moved center to: ", c1.x, c1.y)
+print("- radius: ", c1.radius)
+print("- area: ", c1.get_area())
+
+
 
 print("Square:")
 print("- center: ", s1.x, s1.y)
@@ -89,5 +108,10 @@ print("- side: ", t1.side)
 print("- area: ", t1.get_area())
 print("- vertex: ", t1.get_vertex())
 
-
+print("-----")
+print("The distans betwen Circle and Square: ", Shape.get_distance(c1, s1))
+c1.move(10, 10)
+print("----> Moved circle back to the start. ")
+print("The distans betwen Circle and Square: ", Shape.get_distance(c1, s1))
+print("-----")
 print("The program designed for the forth lesson has been completed!")
