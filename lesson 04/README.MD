@@ -23,14 +23,12 @@ Tiangle:
 - area:  15.588457268119896
 - vertex:  [[27.0, 4.535898384862245], [30, 14.92820323027551], [33.0, 4.535898384862245]]
 -----
-The distans betwen Circle and Square:  84.5931439302264
+The distance between Circle and Square:  84.5931439302264
 ----> Moved circle back to the start.
-The distans betwen Circle and Square:  11.661903789690601
------
-The program designed for the forth lesson has been completed!
+The distance between Circle and Square:  11.661903789690601
 ```
 
 По завершенню виводиться повідомлення 
 ```
-The program designed for the third lesson has been completed!
+The program designed for the fourth lesson has been completed!
 ```
