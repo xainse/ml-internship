@@ -8,3 +8,10 @@ Files:
 - README.MD - this file
 
 Run in console `python app.py` in the root folder to see the results.
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
